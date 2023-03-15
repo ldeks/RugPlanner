@@ -81,6 +81,7 @@ angleAtPatternInterface = math.atan(waistCurveRun/totalRadius) # radians
 skirtLengthRise = totalRadius * (1 - math.cos(angleAtPatternInterface))
 wasteLength = waistCurveRise - skirtLengthRise
 fabricLengthRequired = (2 * desiredLength) + wasteLength
+fabricLengthYards = fabricLengthRequired/36
 absHalfWidth = math.fabs(halfWidthRemaining)
 
 print(f'skirt pattern angle = {angleDegrees:.0f} degrees')
@@ -88,8 +89,8 @@ print(f'waist radius + skirt length = {totalRadius:.2f} inches')
 print(f'pattern width at widest = {patternWidth:.2f} inches')
 print(f'half width of fabric leftover = {halfWidthRemaining:.2f} inches')
 print(f'height of waste piece between the two skirt panels = {wasteLength:.2f} inches')
-print(f'fabric length required = {fabricLengthRequired:.2f} inches')
+print(f'fabric length required = {fabricLengthRequired:.2f} inches = {fabricLengthYards:.2f} yards')
 
 if halfWidthRemaining < 0.0:
-    print(f'***************** Warning: pattern width exceeds folded fabric width by {absHalfWidth} inches.')
+    print(f'***************** Warning: pattern width exceeds folded fabric width by {absHalfWidth:.2f} inches.')
 
